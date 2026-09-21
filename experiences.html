@@ -1,51 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Experiences &amp; Packages | Sydney Adventure Hub</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<a class="visually-hidden" href="#main">Skip to main content</a>
-<header class="site-header" id="site-header"></header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiences &amp; Packages | Sydney Adventure Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" id="site-header"></header>
 
-<main id="main">
-  <section class="page-banner">
-    <div class="container">
-      <h1>Experiences &amp; Packages</h1>
-      <p>Six ways to get outdoors around Sydney &mdash; search, filter by category, or sort by price and duration.</p>
-    </div>
-  </section>
+    <main id="main" tabindex="-1">
+      <section class="page-banner">
+        <div class="container">
+          <p class="eyebrow">Find your next adventure</p>
+          <h1>Experiences &amp; Packages</h1>
+          <p>
+            Six ways to get outdoors around Sydney &mdash; search, filter by
+            category, or sort by price and duration.
+          </p>
+        </div>
+      </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="search-row">
-        <input type="search" id="searchInput" placeholder="Search experiences (e.g. kayak, hike, wildlife)" aria-label="Search experiences">
-        <select id="sortSelect" aria-label="Sort experiences">
-          <option value="default">Sort: Featured</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="duration-asc">Duration: Shortest first</option>
-        </select>
-      </div>
-      <div class="tag-row" id="categoryFilters" role="group" aria-label="Filter by category"></div>
+      <section class="section">
+        <div class="container">
+          <div class="search-row">
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Search experiences (e.g. kayak, hike, wildlife)"
+              aria-label="Search experiences"
+            />
+            <select id="sortSelect" aria-label="Sort experiences">
+              <option value="default">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="duration-asc">Duration: Shortest first</option>
+            </select>
+          </div>
+          <div
+            class="tag-row"
+            id="categoryFilters"
+            role="group"
+            aria-label="Filter by category"
+          ></div>
 
-      <p id="resultCount" style="font-size:.9rem;color:#5a6a54;"></p>
-      <div class="grid grid--3" id="experienceGrid"></div>
-      <div class="empty-state" id="emptyState" hidden>
-        <p>No experiences match that search. Try a different keyword or clear the filter.</p>
-      </div>
-    </div>
-  </section>
-</main>
+          <p id="resultCount" class="result-count" role="status"></p>
+          <div class="grid grid--3" id="experienceGrid"></div>
+          <div class="empty-state" id="emptyState" hidden>
+            <p>
+              No experiences match that search. Try a different keyword or clear
+              the filter.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<footer class="site-footer" id="site-footer"></footer>
+    <footer class="site-footer" id="site-footer"></footer>
 
-<script src="js/data.js"></script>
-<script src="js/components.js"></script>
-<script src="js/experiences.js"></script>
-</body>
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/experiences.js"></script>
+  </body>
 </html>

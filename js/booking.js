@@ -4,6 +4,7 @@
    ============================================ */
 (function () {
   document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("tripDate").min = localToday();
     populateExperienceSelect();
     populateExtras();
     preselectFromQuery();
@@ -11,6 +12,11 @@
     bindSubmit();
     updateSummary();
   });
+
+  function localToday() {
+    var today = new Date();
+    return today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0") + "-" + String(today.getDate()).padStart(2, "0");
+  }
 
   function populateExperienceSelect() {
     var select = document.getElementById("experienceSelect");
@@ -68,8 +74,8 @@
 
   function calculateTotal() {
     var exp = getSelectedExperience();
-    var participants = parseInt(document.getElementById("participants").value, 10);
-    if (!exp || !participants || participants < 1) return null;
+    var participants = Number(document.getElementById("participants").value);
+    if (!exp || !Number.isSafeInteger(participants) || participants < 1) return null;
 
     var extras = getSelectedExtras();
     var extrasPerPerson = extras.reduce(function (sum, e) { return sum + e.price; }, 0);
@@ -87,6 +93,7 @@
   }
 
   function updateSummary() {
+    document.getElementById("confirmBanner").hidden = true;
     var box = document.getElementById("summaryBox");
     var list = document.getElementById("summaryList");
     var calc = calculateTotal();
@@ -103,6 +110,8 @@
       "<dt>Participants</dt><dd>" + calc.participants + "</dd>" +
       "<dt>Base (" + calc.participants + " \u00d7 $" + calc.exp.price + ")</dt><dd>$" + calc.baseTotal.toFixed(2) + "</dd>";
 
+    var date = document.getElementById("tripDate").value;
+    if (date) rows += "<dt>Preferred date</dt><dd>" + new Date(date + "T00:00:00").toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" }) + "</dd>";
     if (calc.extras.length) {
       rows += "<dt>Extras</dt><dd>$" + calc.extrasTotal.toFixed(2) + "</dd>";
     }
@@ -117,7 +126,7 @@
       var valid = validateForm();
       document.getElementById("confirmBanner").hidden = !valid;
       if (valid) {
-        document.getElementById("confirmBanner").scrollIntoView({ behavior: "smooth", block: "nearest" });
+        document.getElementById("confirmBanner").scrollIntoView({ block: "nearest" });
       }
     });
   }
@@ -127,6 +136,7 @@
     var error = document.getElementById("error-" + fieldId);
     field.classList.toggle("has-error", !!message);
     error.textContent = message || "";
+    field.querySelector("input, select, textarea").setAttribute("aria-invalid", String(!!message));
   }
 
   function validateForm() {
@@ -149,16 +159,15 @@
     var date = document.getElementById("tripDate").value;
     if (!date) { setError("tripDate", "Please select a date."); isValid = false; }
     else {
-      var today = new Date(); today.setHours(0,0,0,0);
-      var chosen = new Date(date);
-      if (chosen < today) { setError("tripDate", "Date can't be in the past."); isValid = false; }
+      if (date < localToday()) { setError("tripDate", "Date can't be in the past."); isValid = false; }
       else setError("tripDate", "");
     }
 
-    var participants = parseInt(document.getElementById("participants").value, 10);
-    if (!participants || participants < 1) { setError("participants", "Enter at least 1 participant."); isValid = false; }
+    var participants = Number(document.getElementById("participants").value);
+    if (!Number.isSafeInteger(participants) || participants < 1) { setError("participants", "Enter a whole number of at least 1 participant."); isValid = false; }
     else setError("participants", "");
 
+    if (!isValid) document.querySelector(".has-error input, .has-error select, .has-error textarea").focus();
     return isValid;
   }
 })();

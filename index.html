@@ -1,119 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sydney Adventure Hub | Nature &amp; Eco Escapes</title>
-<meta name="description" content="Book nature and eco tours across Sydney: hikes, kayaking, wildlife encounters and coastal walks.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<a class="visually-hidden" href="#main">Skip to main content</a>
-<header class="site-header" id="site-header"></header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sydney Adventure Hub | Nature &amp; Eco Escapes</title>
+    <meta
+      name="description"
+      content="Book nature and eco tours across Sydney: hikes, kayaking, wildlife encounters and coastal walks."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" id="site-header"></header>
 
-<main id="main">
-  <!-- HERO / IMAGE SLIDER -->
-  <section class="hero" id="heroSlider" aria-roledescription="carousel" aria-label="Featured Sydney nature experiences">
-    <div class="hero__slide is-active hero__slide--1" data-slide="0">
-      <div class="container hero__content">
-        <p class="hero__eyebrow">Sydney Nature &amp; Eco Escapes</p>
-        <h1>Wander further into Sydney's wild side.</h1>
-        <p>Guided hikes, harbour paddles and wildlife encounters run by local naturalists &mdash; small groups, low impact, big views.</p>
-        <div class="hero__actions">
-          <a class="btn btn-light" href="experiences.html">Explore Experiences</a>
-          <a class="btn btn-outline" style="border-color:#F5F0E1;color:#F5F0E1" href="booking.html">Book Now</a>
+    <main id="main" tabindex="-1">
+      <!-- HERO / IMAGE SLIDER -->
+      <section
+        class="hero"
+        id="heroSlider"
+        aria-roledescription="carousel"
+        aria-label="Featured Sydney nature experiences"
+      >
+        <div class="hero__slide is-active hero__slide--1" data-slide="0">
+          <div class="container hero__content">
+            <p class="hero__eyebrow">Sydney Nature &amp; Eco Escapes</p>
+            <h1>Wander further into Sydney's wild side.</h1>
+            <p>
+              Guided hikes, harbour paddles and wildlife encounters run by local
+              naturalists &mdash; small groups, low impact, big views.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn-light" href="experiences.html"
+                >Explore Experiences</a
+              >
+              <a class="btn btn-ghost" href="booking.html">Book Now</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="hero__slide hero__slide--2" data-slide="1">
-      <div class="container hero__content">
-        <p class="hero__eyebrow">On the water</p>
-        <h1>Paddle the harbour's quiet coves.</h1>
-        <p>A calm kayak trail past bushland shoreline, with a guide sharing the harbour's marine life and history.</p>
-        <div class="hero__actions">
-          <a class="btn btn-light" href="experiences.html">See Water Trips</a>
+        <div class="hero__slide hero__slide--2" data-slide="1" hidden>
+          <div class="container hero__content">
+            <p class="hero__eyebrow">On the water</p>
+            <h2 class="hero__title">Paddle the harbour's quiet coves.</h2>
+            <p>
+              A calm kayak trail past bushland shoreline, with a guide sharing
+              the harbour's marine life and history.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn-light" href="experiences.html"
+                >See Water Trips</a
+              >
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="hero__slide hero__slide--3" data-slide="2">
-      <div class="container hero__content">
-        <p class="hero__eyebrow">Blue Mountains</p>
-        <h1>Forest trails, waterfalls, wide-open lookouts.</h1>
-        <p>A full-day hike to the Three Sisters and Jamison Valley, with a stop at a cascading waterfall along the way.</p>
-        <div class="hero__actions">
-          <a class="btn btn-light" href="booking.html">Check Availability</a>
+        <div class="hero__slide hero__slide--3" data-slide="2" hidden>
+          <div class="container hero__content">
+            <p class="hero__eyebrow">Blue Mountains</p>
+            <h2 class="hero__title">
+              Forest trails, waterfalls, wide-open lookouts.
+            </h2>
+            <p>
+              A full-day hike to the Three Sisters and Jamison Valley, with a
+              stop at a cascading waterfall along the way.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn-light" href="booking.html"
+                >Check Availability</a
+              >
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Previous slide">&#10094;</button>
-    <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Next slide">&#10095;</button>
-    <div class="hero__dots" id="heroDots" role="tablist" aria-label="Slide selector"></div>
-  </section>
-
-  <!-- INTRO STRIP -->
-  <section class="section section--tight">
-    <div class="container two-col">
-      <div>
-        <h2>Local trips, run gently.</h2>
-        <p>Sydney Adventure Hub puts together small-group nature experiences across Greater Sydney &mdash; from Blue Mountains hikes to harbour kayaking and wildlife encounters. Every trip is guided by a local, kept to low numbers, and run with a Leave No Trace approach.</p>
-      </div>
-      <ul class="info-list">
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L22 8.5 V15.5 L12 22 L2 15.5 V8.5 Z"/></svg>
-          <div><strong>Small groups</strong><br>Most trips cap at 10&ndash;12 guests.</div>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          <div><strong>Flexible dates</strong><br>Weekday and weekend departures.</div>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8 3 4 7 4c2 0 3.5 1 5 2.5C13.5 5 15 4 17 4c4 0 6.5 4 4.5 8.5C19 16.65 12 21 12 21Z"/></svg>
-          <div><strong>Local guides</strong><br>Naturalists who know the terrain and the wildlife.</div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- FEATURED EXPERIENCES -->
-  <section class="section section--sage">
-    <div class="container">
-      <h2>Featured experiences</h2>
-      <p>A taste of what's on offer &mdash; see every trip, filter by category, on the Experiences &amp; Packages page.</p>
-      <div class="grid grid--3" id="featuredGrid"></div>
-      <div style="margin-top:30px;">
-        <a class="btn btn-primary" href="experiences.html">View all experiences</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY VISIT -->
-  <section class="section section--forest">
-    <div class="container two-col">
-      <div>
-        <h2>Why explore with us</h2>
-        <p>We're built around three ideas: keep groups small, keep trips local, and leave every place as good as we found it.</p>
-        <div class="tag-row">
-          <span class="chip is-active" style="cursor:default;">Leave No Trace</span>
-          <span class="chip is-active" style="cursor:default;">Local guides</span>
-          <span class="chip is-active" style="cursor:default;">Small groups</span>
+        <div class="container hero__controls">
+          <button
+            class="hero__arrow"
+            id="heroPrev"
+            type="button"
+            aria-label="Previous slide"
+          >
+            &#10094;
+          </button>
+          <div
+            class="hero__dots"
+            id="heroDots"
+            role="group"
+            aria-label="Choose a slide"
+          ></div>
+          <button
+            class="hero__arrow"
+            id="heroNext"
+            type="button"
+            aria-label="Next slide"
+          >
+            &#10095;
+          </button>
+          <button
+            class="hero__pause"
+            id="heroPause"
+            type="button"
+            aria-pressed="false"
+          >
+            Pause slides
+          </button>
         </div>
-      </div>
-      <div class="panel" style="background:rgba(245,240,225,0.08); border-color:rgba(245,240,225,0.2);">
-        <h3 style="color:#F5F0E1;">Ready to plan a trip?</h3>
-        <p style="color:#ECE4CE;">Use the cost calculator to estimate your total before you book &mdash; pick a trip, your date, and how many are coming.</p>
-        <a class="btn btn-light" href="booking.html">Open Booking Calculator</a>
-      </div>
-    </div>
-  </section>
-</main>
+      </section>
 
-<footer class="site-footer" id="site-footer"></footer>
+      <!-- INTRO STRIP -->
+      <section class="section section--tight">
+        <div class="container two-col intro-layout">
+          <div>
+            <h2>Local trips, run gently.</h2>
+            <p>
+              Sydney Adventure Hub puts together small-group nature experiences
+              across Greater Sydney &mdash; from Blue Mountains hikes to harbour
+              kayaking and wildlife encounters. Every trip is guided by a local,
+              kept to low numbers, and run with a Leave No Trace approach.
+            </p>
+          </div>
+          <ul class="info-list">
+            <li>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 2 L22 8.5 V15.5 L12 22 L2 15.5 V8.5 Z" />
+              </svg>
+              <div>
+                <strong>Small groups</strong><br />Most trips cap at 10&ndash;12
+                guests.
+              </div>
+            </li>
+            <li>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 3" />
+              </svg>
+              <div>
+                <strong>Flexible dates</strong><br />Weekday and weekend
+                departures.
+              </div>
+            </li>
+            <li>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 21s-7-4.35-9.5-8.5C.5 8 3 4 7 4c2 0 3.5 1 5 2.5C13.5 5 15 4 17 4c4 0 6.5 4 4.5 8.5C19 16.65 12 21 12 21Z"
+                />
+              </svg>
+              <div>
+                <strong>Local guides</strong><br />Naturalists who know the
+                terrain and the wildlife.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-<script src="js/data.js"></script>
-<script src="js/components.js"></script>
-<script src="js/main.js"></script>
-</body>
+      <!-- FEATURED EXPERIENCES -->
+      <section class="section section--sage">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Get outside. Feel alive.</p>
+            <h2>Featured experiences</h2>
+            <p>
+              A taste of what's on offer &mdash; see every trip, filter by
+              category, on the Experiences &amp; Packages page.
+            </p>
+          </div>
+          <div class="grid grid--3" id="featuredGrid"></div>
+          <div class="section-actions">
+            <a class="btn btn-primary" href="experiences.html"
+              >View all experiences</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY VISIT -->
+      <section class="section section--forest why-section">
+        <div class="container two-col">
+          <div>
+            <p class="eyebrow">More nature. More connection.</p>
+            <h2>Why Explore With Us</h2>
+            <p>
+              We're built around three ideas: keep groups small, keep trips
+              local, and leave every place as good as we found it.
+            </p>
+            <div class="tag-row">
+              <span class="value-tag">Leave No Trace</span>
+              <span class="value-tag">Local guides</span>
+              <span class="value-tag">Small groups</span>
+            </div>
+          </div>
+          <div class="panel trip-cta">
+            <h3>Ready to Plan a Trip?</h3>
+            <p>
+              Use the cost calculator to estimate your total before you book
+              &mdash; pick a trip, your date, and how many are coming.
+            </p>
+            <a class="btn btn-light" href="booking.html"
+              >Open Booking Calculator</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="site-footer"></footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

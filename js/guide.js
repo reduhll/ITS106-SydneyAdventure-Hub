@@ -21,7 +21,7 @@
     },
     {
       q: "How do I know my booking is confirmed?",
-      a: "After submitting a booking request through the calculator page, our team reviews availability and sends a confirmation email within 24 hours with your exact meeting point and time."
+      a: "The calculator prepares an estimate; it does not confirm a reservation. Email us your preferred experience, date and group size to request availability and a confirmed meeting point."
     },
     {
       q: "Is transport to the meeting point included?",
@@ -34,12 +34,12 @@
     wrap.innerHTML = FAQS.map(function (item, i) {
       return (
         '<div class="accordion-item">' +
-          '<h3 style="margin:0;">' +
+          '<h3>' +
             '<button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-' + i + '" id="faq-trigger-' + i + '">' +
               "<span>" + item.q + "</span><span class=\"plus\" aria-hidden=\"true\">+</span>" +
             "</button>" +
           "</h3>" +
-          '<div class="accordion-panel" id="faq-panel-' + i + '" role="region" aria-labelledby="faq-trigger-' + i + '"><p>' + item.a + "</p></div>" +
+          '<div class="accordion-panel" id="faq-panel-' + i + '" hidden role="region" aria-labelledby="faq-trigger-' + i + '"><p>' + item.a + "</p></div>" +
         "</div>"
       );
     }).join("");
@@ -51,13 +51,7 @@
       var isOpen = trigger.getAttribute("aria-expanded") === "true";
 
       trigger.setAttribute("aria-expanded", String(!isOpen));
-      if (isOpen) {
-        panel.style.maxHeight = null;
-        panel.classList.remove("is-open");
-      } else {
-        panel.classList.add("is-open");
-        panel.style.maxHeight = panel.scrollHeight + 20 + "px";
-      }
+      panel.hidden = isOpen;
     });
   });
 })();

@@ -20,7 +20,7 @@
         .filter(function (c, i, arr) { return arr.indexOf(c) === i; })
     );
     wrap.innerHTML = categories.map(function (cat) {
-      return '<button class="chip' + (cat === "All" ? " is-active" : "") + '" data-cat="' + cat + '">' + cat + "</button>";
+      return '<button class="chip' + (cat === "All" ? " is-active" : "") + '" aria-pressed="' + (cat === "All") + '" data-cat="' + cat + '">' + cat + "</button>";
     }).join("");
 
     wrap.addEventListener("click", function (e) {
@@ -29,6 +29,7 @@
       activeCategory = btn.dataset.cat;
       Array.prototype.forEach.call(wrap.children, function (c) {
         c.classList.toggle("is-active", c === btn);
+        c.setAttribute("aria-pressed", String(c === btn));
       });
       render();
     });
@@ -67,23 +68,8 @@
     var results = getFiltered();
 
     count.textContent = results.length + " experience" + (results.length === 1 ? "" : "s") + " found";
-    grid.innerHTML = results.map(cardHTML).join("");
+    grid.innerHTML = results.map(experienceCardHTML).join("");
     empty.hidden = results.length !== 0;
   }
 
-  function cardHTML(exp) {
-    return (
-      '<article class="card">' +
-        '<div class="card__media" style="background-image:url(\'' + exp.image + '\')"></div>' +
-        '<div class="card__body">' +
-          '<span class="card__category">' + exp.category + "</span>" +
-          "<h3>" + exp.title + "</h3>" +
-          "<p>" + exp.description + "</p>" +
-          '<div class="card__meta"><span>&#9201; ' + exp.duration + '</span><span>&#128197; ' + exp.availability + "</span></div>" +
-          '<div class="card__foot"><span class="card__price">$' + exp.price + ' / person</span>' +
-          '<a class="btn btn-outline" href="booking.html?exp=' + exp.id + '">Book</a></div>' +
-        "</div>" +
-      "</article>"
-    );
-  }
 })();

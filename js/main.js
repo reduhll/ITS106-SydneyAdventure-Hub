@@ -1,70 +1,60 @@
-/* ============================================
-   Homepage: hero image slider + featured experience cards.
-   ============================================ */
 (function () {
   document.addEventListener("DOMContentLoaded", function () {
-    renderFeatured();
+    document.getElementById("featuredGrid").innerHTML = EXPERIENCES.slice(0, 3).map(experienceCardHTML).join("");
     initHeroSlider();
   });
 
-  function renderFeatured() {
-    var grid = document.getElementById("featuredGrid");
-    if (!grid) return;
-    var featured = EXPERIENCES.slice(0, 3);
-    grid.innerHTML = featured.map(cardHTML).join("");
-  }
-
-  function cardHTML(exp) {
-    return (
-      '<article class="card">' +
-        '<div class="card__media" style="background-image:url(\'' + exp.image + '\')"></div>' +
-        '<div class="card__body">' +
-          '<span class="card__category">' + exp.category + "</span>" +
-          "<h3>" + exp.title + "</h3>" +
-          "<p>" + exp.description + "</p>" +
-          '<div class="card__meta"><span>&#9201; ' + exp.duration + '</span><span>&#128197; ' + exp.availability + "</span></div>" +
-          '<div class="card__foot"><span class="card__price">$' + exp.price + ' / person</span>' +
-          '<a class="btn btn-outline" href="booking.html?exp=' + exp.id + '">Book</a></div>' +
-        "</div>" +
-      "</article>"
-    );
-  }
-
   function initHeroSlider() {
     var root = document.getElementById("heroSlider");
-    if (!root) return;
     var slides = root.querySelectorAll(".hero__slide");
-    var dotsWrap = document.getElementById("heroDots");
+    var dots = document.getElementById("heroDots");
+    var pause = document.getElementById("heroPause");
+    var motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var paused = motion.matches;
+    var hovering = false;
     var current = 0;
     var timer;
 
-    slides.forEach(function (_, i) {
+    slides.forEach(function (slide, index) {
+      slide.setAttribute("role", "group");
+      slide.setAttribute("aria-roledescription", "slide");
+      slide.setAttribute("aria-label", (index + 1) + " of " + slides.length);
       var dot = document.createElement("button");
-      dot.setAttribute("role", "tab");
-      dot.setAttribute("aria-label", "Go to slide " + (i + 1));
-      if (i === 0) dot.classList.add("is-active");
-      dot.addEventListener("click", function () { goTo(i); restart(); });
-      dotsWrap.appendChild(dot);
+      dot.type = "button";
+      dot.setAttribute("aria-label", "Show slide " + (index + 1));
+      dot.addEventListener("click", function () { goTo(index); restart(); });
+      dots.appendChild(dot);
     });
 
     function goTo(index) {
-      slides[current].classList.remove("is-active");
-      dotsWrap.children[current].classList.remove("is-active");
       current = (index + slides.length) % slides.length;
-      slides[current].classList.add("is-active");
-      dotsWrap.children[current].classList.add("is-active");
+      slides.forEach(function (slide, i) {
+        slide.hidden = i !== current;
+        slide.classList.toggle("is-active", i === current);
+        dots.children[i].classList.toggle("is-active", i === current);
+        dots.children[i].setAttribute("aria-pressed", String(i === current));
+      });
     }
 
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
     function restart() {
       clearInterval(timer);
-      timer = setInterval(next, 6000);
+      if (!paused && !hovering && !document.hidden && !root.contains(document.activeElement)) {
+        timer = setInterval(function () { goTo(current + 1); }, 6500);
+      }
+      pause.textContent = paused ? "Play slides" : "Pause slides";
+      pause.setAttribute("aria-pressed", String(paused));
     }
 
-    document.getElementById("heroNext").addEventListener("click", function () { next(); restart(); });
-    document.getElementById("heroPrev").addEventListener("click", function () { prev(); restart(); });
-
+    document.getElementById("heroNext").addEventListener("click", function () { goTo(current + 1); restart(); });
+    document.getElementById("heroPrev").addEventListener("click", function () { goTo(current - 1); restart(); });
+    pause.addEventListener("click", function () { paused = !paused; restart(); });
+    root.addEventListener("mouseenter", function () { hovering = true; restart(); });
+    root.addEventListener("mouseleave", function () { hovering = false; restart(); });
+    root.addEventListener("focusin", restart);
+    root.addEventListener("focusout", function () { setTimeout(restart, 0); });
+    document.addEventListener("visibilitychange", restart);
+    motion.addEventListener("change", function () { paused = motion.matches; restart(); });
+    goTo(0);
     restart();
   }
 })();

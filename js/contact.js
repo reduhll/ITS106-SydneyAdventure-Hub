@@ -5,14 +5,21 @@
 (function () {
   document.addEventListener("DOMContentLoaded", function () {
     var form = document.getElementById("contactForm");
+    form.addEventListener("input", function () { document.getElementById("contactConfirm").hidden = true; });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var valid = validateForm();
       var confirm = document.getElementById("contactConfirm");
       confirm.hidden = !valid;
       if (valid) {
-        confirm.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        form.reset();
+        confirm.scrollIntoView({ block: "nearest" });
+        var name = document.getElementById("fullName").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var type = document.getElementById("enquiryType").selectedOptions[0].text;
+        var rating = document.getElementById("rating").selectedOptions[0].text;
+        var message = document.getElementById("message").value.trim();
+        var body = "Name: " + name + "\nEmail: " + email + "\nEnquiry type: " + type + "\nRating: " + rating + "\n\n" + message;
+        confirm.querySelector("a").href = "mailto:sydneyadventurehubinfo@.com.au?subject=" + encodeURIComponent(type + " - " + name) + "&body=" + encodeURIComponent(body);
       }
     });
   });
@@ -22,6 +29,7 @@
     var error = document.getElementById("error-" + fieldId);
     field.classList.toggle("has-error", !!message);
     error.textContent = message || "";
+    field.querySelector("input, select, textarea").setAttribute("aria-invalid", String(!!message));
   }
 
   function validateForm() {
@@ -46,6 +54,7 @@
     else if (message.length < 10) { setError("message", "Please add a little more detail (10+ characters)."); isValid = false; }
     else setError("message", "");
 
+    if (!isValid) document.querySelector(".has-error input, .has-error select, .has-error textarea").focus();
     return isValid;
   }
 })();
