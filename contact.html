@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Feedback | Sydney Adventure Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="visually-hidden" href="#main">Skip to main content</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main">
+  <section class="page-banner">
+    <div class="container">
+      <h1>Contact &amp; Feedback</h1>
+      <p>Questions about a trip, or feedback from a recent one &mdash; we'd like to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <h2>Get in touch</h2>
+        <ul class="info-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div><strong>Office</strong><br>Cadigal Wharf, Circular Quay, Sydney NSW 2000</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <div><strong>Email</strong><br><a href="mailto:hello@sydneyadventurehub.com.au">hello@sydneyadventurehub.com.au</a></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+            <div><strong>Phone</strong><br><a href="tel:+61212345678">(02) 1234 5678</a></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div><strong>Opening hours</strong><br>Mon&ndash;Fri 8:30am&ndash;5:30pm, Sat 9am&ndash;2pm. Closed Sundays &amp; public holidays.</div>
+          </li>
+        </ul>
+
+        <h3 style="margin-top:28px;">Service area</h3>
+        <div class="panel" style="padding:0; overflow:hidden;">
+          <iframe title="Sydney Adventure Hub service area map" src="https://maps.google.com/maps?q=Circular%20Quay%2C%20Sydney%20NSW&z=11&output=embed" width="100%" height="260" style="border:0; display:block;" loading="lazy"></iframe>
+        </div>
+        <p style="font-size:.88rem;color:#5a6a54;">Trips run across the Greater Sydney region, from the Harbour to the Blue Mountains and Hawkesbury River.</p>
+      </div>
+
+      <div class="panel">
+        <h2 style="margin-top:0;">Send feedback or an enquiry</h2>
+        <form id="contactForm" novalidate>
+          <div class="form-grid">
+            <div class="field" id="field-fullName">
+              <label for="fullName">Name</label>
+              <input type="text" id="fullName" name="fullName" autocomplete="name">
+              <span class="error-text" id="error-fullName"></span>
+            </div>
+            <div class="field" id="field-email">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email">
+              <span class="error-text" id="error-email"></span>
+            </div>
+            <div class="field" id="field-enquiryType">
+              <label for="enquiryType">Enquiry type</label>
+              <select id="enquiryType" name="enquiryType">
+                <option value="">Select one&hellip;</option>
+                <option value="booking">Booking question</option>
+                <option value="feedback">Feedback on a past trip</option>
+                <option value="group">Group / private trip enquiry</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="error-text" id="error-enquiryType"></span>
+            </div>
+            <div class="field" id="field-rating">
+              <label for="rating">Experience rating (if applicable)</label>
+              <select id="rating" name="rating">
+                <option value="">N/A &mdash; general enquiry</option>
+                <option value="5">5 &mdash; Excellent</option>
+                <option value="4">4 &mdash; Good</option>
+                <option value="3">3 &mdash; Average</option>
+                <option value="2">2 &mdash; Below average</option>
+                <option value="1">1 &mdash; Poor</option>
+              </select>
+            </div>
+            <div class="field field--full" id="field-message">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5"></textarea>
+              <span class="error-text" id="error-message"></span>
+            </div>
+          </div>
+          <div style="margin-top:18px;">
+            <button type="submit" class="btn btn-primary">Send message</button>
+          </div>
+        </form>
+        <div class="confirm-banner" id="contactConfirm" hidden>
+          Thanks &mdash; your message has been sent. We usually reply within one business day.
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>
