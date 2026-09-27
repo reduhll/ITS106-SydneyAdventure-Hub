@@ -160,6 +160,22 @@ button { cursor: pointer; }
 .trip-cta .btn { margin-top: 8px; }
 
 .page-banner { padding-block: clamp(42px, 5.5vw, 66px); background: linear-gradient(115deg, var(--onyx), var(--olive-leaf)); color: var(--white); border-bottom: 4px solid var(--gold); }
+
+/* Visitor Guide banner only */
+.guide-banner {
+    background:
+        linear-gradient(
+            rgba(12, 23, 7, 0.15),
+            rgba(12, 23, 7, 0.15)
+        ),
+        url("../img/EmpressWaterfall-BMT.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
 .page-banner h1 { max-width: 26ch; margin-bottom: 16px; color: var(--white); }
 .page-banner p { max-width: 64ch; margin-bottom: 0; color: var(--cream); }
 .page-banner .eyebrow { margin-bottom: 14px; color: var(--cream); }
