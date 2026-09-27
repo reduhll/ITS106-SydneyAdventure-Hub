@@ -20,9 +20,9 @@
       <nav class="container nav" aria-label="Main navigation">
         <a class="brand" href="index.html">
           <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
-            <circle cx="20" cy="20" r="19" fill="#087f68"/>
-            <path d="M20 30V13M20 16l-7 7m7-7 7 7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 30Q20 22 32 30" stroke="#f5c451" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <circle cx="20" cy="20" r="19" fill="#4A612F"/>
+            <path d="M20 30V13M20 16l-7 7m7-7 7 7" stroke="#FAF5EF" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 30Q20 22 32 30" stroke="#EEE6D1" stroke-width="2.4" fill="none" stroke-linecap="round"/>
           </svg>
           <span class="brand__text">Sydney Adventure Hub<span>Nature &amp; Eco Escapes</span></span>
         </a>
@@ -105,7 +105,7 @@ function experienceCardHTML(exp) {
         <span class="card__category">${exp.category}</span>
         <h3>${exp.title}</h3>
         <p>${exp.description}</p>
-        <div class="card__meta"><span>Duration: ${exp.duration}</span><span>Availability: ${exp.availability}</span></div>
+        <div class="card__meta"><span>⏱️ Duration: ${exp.duration}</span><span>📅 Availability: ${exp.availability}</span></div>
         <div class="card__foot">
           <span class="card__price">$${exp.price} <small>/ person</small></span>
           <a class="btn btn-outline" href="booking.html?exp=${exp.id}" aria-label="Book ${exp.title}">Book</a>

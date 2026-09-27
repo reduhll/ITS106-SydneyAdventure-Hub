@@ -91,10 +91,10 @@ var EXTRAS = [
 ];
 
 var ICONS = {
-  mountain: '<svg viewBox="0 0 64 64" fill="none" stroke="#F5F0E1" stroke-width="2.2" stroke-linejoin="round"><path d="M4 50 L24 18 L32 30 L40 14 L60 50 Z"/><circle cx="46" cy="16" r="4" fill="#F5F0E1" stroke="none"/></svg>',
-  kayak: '<svg viewBox="0 0 64 64" fill="none" stroke="#F5F0E1" stroke-width="2.2" stroke-linecap="round"><path d="M6 40 Q32 28 58 40 Q32 50 6 40 Z"/><path d="M20 20 L44 44"/><path d="M16 16 L24 24 M40 40 L48 48"/></svg>',
-  leaf: '<svg viewBox="0 0 64 64" fill="none" stroke="#F5F0E1" stroke-width="2.2" stroke-linecap="round"><path d="M14 50 C14 26 26 12 50 10 C48 34 34 46 14 50 Z"/><path d="M16 48 C26 38 34 30 48 14"/></svg>',
-  wave: '<svg viewBox="0 0 64 64" fill="none" stroke="#F5F0E1" stroke-width="2.2" stroke-linecap="round"><path d="M4 26 Q12 18 20 26 T36 26 T52 26 T60 26"/><path d="M4 38 Q12 30 20 38 T36 38 T52 38 T60 38"/><path d="M4 50 Q12 42 20 50 T36 50 T52 50 T60 50"/></svg>',
-  sprout: '<svg viewBox="0 0 64 64" fill="none" stroke="#F5F0E1" stroke-width="2.2" stroke-linecap="round"><path d="M32 56 V30"/><path d="M32 30 C32 16 20 12 12 12 C12 24 20 30 32 30 Z"/><path d="M32 22 C32 14 40 10 48 10 C48 20 42 24 32 22 Z"/></svg>',
-  boat: '<svg viewBox="0 0 64 64" fill="none" stroke="#F5F0E1" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M8 40 H56 L48 52 H16 Z"/><path d="M32 40 V14"/><path d="M32 16 L48 30 H32 Z"/></svg>'
+  mountain: '<svg viewBox="0 0 64 64" fill="none" stroke="#EEE6D1" stroke-width="2.2" stroke-linejoin="round"><path d="M4 50 L24 18 L32 30 L40 14 L60 50 Z"/><circle cx="46" cy="16" r="4" fill="#EEE6D1" stroke="none"/></svg>',
+  kayak: '<svg viewBox="0 0 64 64" fill="none" stroke="#EEE6D1" stroke-width="2.2" stroke-linecap="round"><path d="M6 40 Q32 28 58 40 Q32 50 6 40 Z"/><path d="M20 20 L44 44"/><path d="M16 16 L24 24 M40 40 L48 48"/></svg>',
+  leaf: '<svg viewBox="0 0 64 64" fill="none" stroke="#EEE6D1" stroke-width="2.2" stroke-linecap="round"><path d="M14 50 C14 26 26 12 50 10 C48 34 34 46 14 50 Z"/><path d="M16 48 C26 38 34 30 48 14"/></svg>',
+  wave: '<svg viewBox="0 0 64 64" fill="none" stroke="#EEE6D1" stroke-width="2.2" stroke-linecap="round"><path d="M4 26 Q12 18 20 26 T36 26 T52 26 T60 26"/><path d="M4 38 Q12 30 20 38 T36 38 T52 38 T60 38"/><path d="M4 50 Q12 42 20 50 T36 50 T52 50 T60 50"/></svg>',
+  sprout: '<svg viewBox="0 0 64 64" fill="none" stroke="#EEE6D1" stroke-width="2.2" stroke-linecap="round"><path d="M32 56 V30"/><path d="M32 30 C32 16 20 12 12 12 C12 24 20 30 32 30 Z"/><path d="M32 22 C32 14 40 10 48 10 C48 20 42 24 32 22 Z"/></svg>',
+  boat: '<svg viewBox="0 0 64 64" fill="none" stroke="#EEE6D1" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M8 40 H56 L48 52 H16 Z"/><path d="M32 40 V14"/><path d="M32 16 L48 30 H32 Z"/></svg>'
 };

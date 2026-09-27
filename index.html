@@ -21,14 +21,18 @@
     <header class="site-header" id="site-header"></header>
 
     <main id="main" tabindex="-1">
-      <!-- HERO / IMAGE SLIDER -->
+      <!-- HERO -->
       <section
         class="hero"
         id="heroSlider"
-        aria-roledescription="carousel"
         aria-label="Featured Sydney nature experiences"
       >
-        <div class="hero__slide is-active hero__slide--1" data-slide="0">
+        <div class="hero__images" aria-hidden="true">
+          <div class="hero__image hero__image--1 is-active"></div>
+          <div class="hero__image hero__image--2"></div>
+          <div class="hero__image hero__image--3"></div>
+        </div>
+        <div class="hero__slide is-active hero__slide--1">
           <div class="container hero__content">
             <p class="hero__eyebrow">Sydney Nature &amp; Eco Escapes</p>
             <h1>Wander further into Sydney's wild side.</h1>
@@ -44,7 +48,7 @@
             </div>
           </div>
         </div>
-        <div class="hero__slide hero__slide--2" data-slide="1" hidden>
+        <div class="hero__slide hero__slide--2">
           <div class="container hero__content">
             <p class="hero__eyebrow">On the water</p>
             <h2 class="hero__title">Paddle the harbour's quiet coves.</h2>
@@ -59,7 +63,7 @@
             </div>
           </div>
         </div>
-        <div class="hero__slide hero__slide--3" data-slide="2" hidden>
+        <div class="hero__slide hero__slide--3">
           <div class="container hero__content">
             <p class="hero__eyebrow">Blue Mountains</p>
             <h2 class="hero__title">
@@ -75,39 +79,6 @@
               >
             </div>
           </div>
-        </div>
-
-        <div class="container hero__controls">
-          <button
-            class="hero__arrow"
-            id="heroPrev"
-            type="button"
-            aria-label="Previous slide"
-          >
-            &#10094;
-          </button>
-          <div
-            class="hero__dots"
-            id="heroDots"
-            role="group"
-            aria-label="Choose a slide"
-          ></div>
-          <button
-            class="hero__arrow"
-            id="heroNext"
-            type="button"
-            aria-label="Next slide"
-          >
-            &#10095;
-          </button>
-          <button
-            class="hero__pause"
-            id="heroPause"
-            type="button"
-            aria-pressed="false"
-          >
-            Pause slides
-          </button>
         </div>
       </section>
 
