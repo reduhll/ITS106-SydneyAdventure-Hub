@@ -160,7 +160,6 @@ button { cursor: pointer; }
 .trip-cta .btn { margin-top: 8px; }
 
 .page-banner { padding-block: clamp(42px, 5.5vw, 66px); background: linear-gradient(115deg, var(--onyx), var(--olive-leaf)); color: var(--white); border-bottom: 4px solid var(--gold); }
-
 /* Visitor Guide banner only */
 .guide-banner {
     background:
